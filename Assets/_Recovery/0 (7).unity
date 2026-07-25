@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 581009791}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1011,22 +1011,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PebbleSpawner
   pebblePrefab: {fileID: 3545705340893064615, guid: 999f3ba53f4bdd540a309424a91acfd3, type: 3}
-  spawnPoints: []
+  radius: 2
   minInterval: 0.4
   maxInterval: 1
   minScale: 0.04
   maxScale: 0.08
-  bigRockChance: 0.05
-  bigRockMultiplier: 1.8
   color1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   color2: {r: 0.25, g: 0.25, b: 0.25, a: 1}
   color3: {r: 0.45, g: 0.4, b: 0.35, a: 1}
   destroyTime: 4
-  collapseChance: 0.15
-  collapseMin: 3
-  collapseMax: 5
-  minDelay: 0.01
-  maxDelay: 0.05
 --- !u!4 &613004035
 Transform:
   m_ObjectHideFlags: 0
@@ -1154,23 +1147,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1034641629 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1222903460290587680, guid: 1a8fa7eb085f603498176af7d2fe6e70, type: 3}
-  m_PrefabInstance: {fileID: 1886700515}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1034641630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034641629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 895adb2d2ff551b4c8546df60ebb1771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &1118668766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,78 +1483,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1468788838
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1468788841}
-  - component: {fileID: 1468788840}
-  - component: {fileID: 1468788839}
-  m_Layer: 0
-  m_Name: Collapse Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1468788839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468788838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1105276c708797f4f8e18d884a7efb60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollapseEvent
-  pebbleSpawner: {fileID: 613004034}
-  cameraShake: {fileID: 1034641630}
-  audioSource: {fileID: 0}
-  collapseSound: {fileID: 0}
-  shakeTime: 0.4
-  shakePower: 0.08
---- !u!65 &1468788840
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468788838}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9, y: 6, z: 7}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1468788841
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468788838}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 2.3, z: 0.34}
-  m_LocalScale: {x: 0.982, y: 1, z: 0.9592}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625351418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,10 +1762,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1222903460290587680, guid: 1a8fa7eb085f603498176af7d2fe6e70, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1034641630}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a8fa7eb085f603498176af7d2fe6e70, type: 3}
 --- !u!1 &1946682608
 GameObject:
@@ -2087,63 +1988,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &283227118690462950
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4935306787733002562, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_Name
-      value: Dust
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.94001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.02315
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518210043771861659, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
 --- !u!1001 &1214128894143573574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2152,10 +1996,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -203443927997361740, guid: 999f3ba53f4bdd540a309424a91acfd3, type: 3}
-      propertyPath: dustPrefab
-      value: 
-      objectReference: {fileID: 4935306787733002562, guid: 7b488fb22a6d9da498db55c0ac9af699, type: 3}
     - target: {fileID: 3545705340893064615, guid: 999f3ba53f4bdd540a309424a91acfd3, type: 3}
       propertyPath: m_Name
       value: Falling Pebbles
@@ -2228,5 +2068,3 @@ SceneRoots:
   - {fileID: 215505931}
   - {fileID: 1214128894143573574}
   - {fileID: 613004035}
-  - {fileID: 283227118690462950}
-  - {fileID: 1468788841}
