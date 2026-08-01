@@ -29,7 +29,7 @@ public class PebbleSpawner : MonoBehaviour
     public Color color3 = new Color(0.45f, 0.40f, 0.35f);
 
     [Header("消える時間")]
-    public float destroyTime = 4f;
+    public float destroyTime = 5f;
 
     [Header("崩落イベント")]
     [Range(0f, 1f)]
@@ -44,13 +44,11 @@ public class PebbleSpawner : MonoBehaviour
 
     private bool isRunning = false;
 
-    // ゲーム開始時には何もしない
     void Start()
     {
 
     }
 
-    // CollapseEventから呼び出す
     public void StartFalling()
     {
         if (isRunning)
@@ -142,7 +140,6 @@ public class PebbleSpawner : MonoBehaviour
         Destroy(pebble, destroyTime);
     }
 
-    // 必要なら止める
     public void StopFalling()
     {
         isRunning = false;

@@ -6,7 +6,7 @@ public class Pebble : MonoBehaviour
     public GameObject dustPrefab;
 
     [Header("消えるまでの時間")]
-    public float destroyTime = 3f;
+    public float destroyTime = 5f;
 
     private bool hasHit = false;
 
@@ -20,20 +20,19 @@ public class Pebble : MonoBehaviour
         if (hasHit)
             return;
 
-        if (collision.gameObject.CompareTag("Ground"))
+        hasHit = true;
+
+        // 接触地点にホコリを出す
+        if (dustPrefab != null)
         {
-            hasHit = true;
-
-            if (dustPrefab != null)
-            {
-                Instantiate(
-                    dustPrefab,
-                    collision.contacts[0].point,
-                    Quaternion.identity
-                );
-            }
-
-            Destroy(gameObject);
+            Instantiate(
+                dustPrefab,
+                collision.contacts[0].point,
+                Quaternion.identity
+            );
         }
+
+        // 石を消す
+        Destroy(gameObject);
     }
 }
