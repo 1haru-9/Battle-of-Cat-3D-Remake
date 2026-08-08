@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FlashlightPickup : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class FlashlightPickup : MonoBehaviour
 
     void Update()
     {
-        if (canPickUp && !pickedUp && Input.GetKeyDown(KeyCode.E))
+        if (canPickUp && !pickedUp && Keyboard.current.eKey.wasPressedThisFrame)
         {
             PickUp();
         }
@@ -20,25 +21,15 @@ public class FlashlightPickup : MonoBehaviour
     {
         pickedUp = true;
 
-        // カメラの子にする
-        transform.SetParent(cameraTransform);
+        transform.SetParent(cameraTransform, false);
 
-        // 持った位置
-        transform.localPosition = new Vector3(0.25f, -0.18f, 0.55f);
+        // 左下オフハンド位置
+        transform.localPosition = new Vector3(-1.3f, -0.6f, 0.45f);
 
-        // 持った向き
-        transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+        // 左手で持ってる感じ
+        transform.localRotation = Quaternion.identity;
 
-        // ライトを強くする
-        flashlightLight.intensity = 8f;
-        flashlightLight.range = 15f;
-        flashlightLight.spotAngle = 60f;
-        flashlightLight.innerSpotAngle = 42f;
-
-        // コライダーを無効化
         GetComponent<Collider>().enabled = false;
-
-        Debug.Log("懐中電灯を拾った！");
     }
 
     private void OnTriggerEnter(Collider other)
