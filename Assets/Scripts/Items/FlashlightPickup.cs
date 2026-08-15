@@ -7,7 +7,7 @@ public class FlashlightPickup : MonoBehaviour
     public Light flashlightLight;
 
     private bool canPickUp = false;
-    private bool pickedUp = false;
+    public bool pickedUp = false;
 
     void Update()
     {
@@ -17,7 +17,7 @@ public class FlashlightPickup : MonoBehaviour
         }
     }
 
-    void PickUp()
+        void PickUp()
     {
         pickedUp = true;
 

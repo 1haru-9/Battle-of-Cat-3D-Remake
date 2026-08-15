@@ -746,6 +746,7 @@ GameObject:
   - component: {fileID: 322999891}
   - component: {fileID: 322999892}
   - component: {fileID: 322999893}
+  - component: {fileID: 322999894}
   m_Layer: 0
   m_Name: Flashlight
   m_TagString: Untagged
@@ -833,6 +834,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlashlightPickup
   cameraTransform: {fileID: 1034641635}
   flashlightLight: {fileID: 2021902820}
+  pickedUp: 0
+--- !u!114 &322999894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322999889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbe21d0ed693b543997889e1903d2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractTextTrigger
+  interactText: {fileID: 84191212}
+  flashlightPickup: {fileID: 322999893}
 --- !u!1 &347305243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,7 +2791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1742461917
 MonoBehaviour:
   m_ObjectHideFlags: 0
