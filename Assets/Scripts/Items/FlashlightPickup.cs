@@ -17,7 +17,7 @@ public class FlashlightPickup : MonoBehaviour
         }
     }
 
-        void PickUp()
+    void PickUp()
     {
         pickedUp = true;
 
@@ -30,6 +30,12 @@ public class FlashlightPickup : MonoBehaviour
         transform.localRotation = Quaternion.identity;
 
         GetComponent<Collider>().enabled = false;
+
+        // 【追加】懐中電灯UIに対して「画像を表示して」と命令を出す
+        if (FlashlightUI.Instance != null)
+        {
+            FlashlightUI.Instance.ShowIcon();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
