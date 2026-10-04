@@ -3526,10 +3526,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1485535160762900540, guid: 1a8fa7eb085f603498176af7d2fe6e70, type: 3}
-      propertyPath: mouseSensitivity
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5305712686032727567, guid: 1a8fa7eb085f603498176af7d2fe6e70, type: 3}
       propertyPath: m_Name
       value: Player
