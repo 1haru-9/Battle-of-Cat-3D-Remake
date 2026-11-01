@@ -1,7 +1,7 @@
 # Blender 5.2.0 LTS MTL File: 'W.blend'
 # www.blender.org
 
-newmtl Ceiling_Rock.001
+newmtl Ceiling_Rock
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.250000 0.250000 0.230000
@@ -11,7 +11,7 @@ Ni 1.500000
 d 1.000000
 illum 2
 
-newmtl Natural_Cave_Rock.002
+newmtl Natural_Cave_Rock
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.220000 0.230000 0.220000
@@ -21,7 +21,7 @@ Ni 1.500000
 d 1.000000
 illum 2
 
-newmtl Natural_Soil.003
+newmtl Natural_Soil
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.190000 0.130000 0.080000
